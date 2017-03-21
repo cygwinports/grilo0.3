@@ -1,0 +1,29 @@
+ORIG_PN="grilo"
+inherit gnome2
+
+NAME="grilo0.3"
+VERSION=0.3.3
+RELEASE=1
+CATEGORY="Libs"
+SUMMARY="Media discovery framework"
+DESCRIPTION="Grilo is a framework for browsing and searching media content
+from various sources using a single API."
+
+PATCH_URI="
+	01-parallel-install.patch
+	02-gtk-doc.patch
+	03-vala.patch
+"
+
+PKG_NAMES="${NAME} lib${NAME}_0 lib${NAME}-devel lib${NAME}-doc girepository-Grl0.3 vala-${NAME}"
+grilo0_3_CATEGORY="Net"
+grilo0_3_CONTENTS="usr/bin/*.exe usr/share/man/"
+libgrilo0_3_0_CONTENTS="usr/bin/cyggrilo-0.3-0.dll usr/bin/cyggrl*-0.3-0.dll usr/share/doc/ usr/share/locale/"
+libgrilo0_3_devel_CONTENTS="usr/include/ usr/lib/lib* usr/lib/pkgconfig/"
+libgrilo0_3_doc_CATEGORY="Doc"
+libgrilo0_3_doc_CONTENTS="usr/share/gtk-doc/"
+girepository_Grl0_3_CONTENTS="usr/*/gir*/Grl*-0.3.*"
+vala_grilo0_3_CONTENTS="usr/share/vala*/vapi/grilo*-0.3.*"
+
+DISTCLEANFILES="src/*.gir libs/net/*.gir"
+

@@ -1,0 +1,12 @@
+--- origsrc/grilo-0.1.17/doc/grilo/Makefile.am	2011-09-05 06:22:07.000000000 -0500
++++ src/grilo-0.1.17/doc/grilo/Makefile.am	2011-11-18 03:03:23.038084000 -0600
+@@ -92,7 +92,8 @@ expand_content_files=
+ # e.g. GTKDOC_CFLAGS=-I$(top_srcdir) -I$(top_builddir) $(GTK_DEBUG_FLAGS)
+ # e.g. GTKDOC_LIBS=$(top_builddir)/gtk/$(gtktargetlib)
+ GTKDOC_CFLAGS=-I$(top_srcdir)/src -I$(top_srcdir)/src/data $(DEPS_CFLAGS)
+-GTKDOC_LIBS=$(top_builddir)/src/lib@GRL_NAME@.la $(DEPS_LIBS)
++GTKDOC_LIBS=$(top_builddir)/libs/net/libgrlnet-@GRL_MAJORMINOR@.la \
++	$(top_builddir)/src/lib@GRL_NAME@.la $(DEPS_LIBS)
+ 
+ # This includes the standard gtk-doc make rules, copied by gtkdocize.
+ include $(top_srcdir)/gtk-doc.make

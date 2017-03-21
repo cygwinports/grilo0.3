@@ -1,0 +1,22 @@
+--- origsrc/grilo-0.3.3/configure.ac	2017-02-14 08:26:28.000000000 -0600
++++ src/grilo-0.3.3/configure.ac	2017-03-07 12:07:36.535385400 -0600
+@@ -256,7 +256,7 @@ VAPIGEN_CHECK([0.27])
+ # ----------------------------------------------------------
+ 
+ IT_PROG_INTLTOOL([0.40.0])
+-GETTEXT_PACKAGE=grilo
++GETTEXT_PACKAGE=grilo-${GRL_MAJORMINOR}
+ AC_SUBST(GETTEXT_PACKAGE)
+ AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE,"$GETTEXT_PACKAGE", [The domain to use with gettext])
+ 
+--- origsrc/grilo-0.1.17/doc/grilo/Makefile.am	2011-09-05 06:22:07.000000000 -0500
++++ src/grilo-0.1.17/doc/grilo/Makefile.am	2011-11-18 03:03:23.038084000 -0600
+@@ -12,7 +12,7 @@ AUTOMAKE_OPTIONS = 1.6
+ DOC_MODULE=grilo
+ 
+ # Uncomment for versioned docs and specify the version of the module, e.g. '2'.
+-#DOC_MODULE_VERSION=2
++DOC_MODULE_VERSION = @GRL_MAJORMINOR@
+ 
+ 
+ # The top-level SGML file. You can change this if you want to.
