@@ -2,7 +2,7 @@ ORIG_PN="grilo"
 inherit gnome2
 
 NAME="grilo0.3"
-VERSION=0.3.3
+VERSION=0.3.4
 RELEASE=1
 CATEGORY="Libs"
 SUMMARY="Media discovery framework"
